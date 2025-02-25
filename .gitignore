@@ -1,0 +1,12 @@
+# Arquivos de build do Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+dist/
+build/
+env/
+venv/
+# Configuração de ambiente
+.env
+.DS_Store
