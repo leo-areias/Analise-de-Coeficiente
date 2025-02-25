@@ -40,12 +40,14 @@ def get_coef(data, alvo, limite=[-0.01, 0.01], ascending = False):
     if len(corr_dict) == 0:
         raise ValueError("Ajuste seu Limite: Nenhuma correlação encontrada dentro dos critérios.")
     else:
-        dataframe_corr = pd.DataFrame(list(corr_dict.items()), columns = ['Valores', 'Coeficiente de Correlação'])
+        dataframe_corr = pd.DataFrame(list(corr_dict.items()), columns = ['Colunas', 'Coeficiente de Correlação'])
 
     if ascending == False:
         dataframe_corr = dataframe_corr.sort_values('Coeficiente de Correlação', ignore_index = True, ascending = False)
     else:
         dataframe_corr = dataframe_corr.sort_values('Coeficiente de Correlação', ignore_index = True, ascending = True)
 
+    # Exibir o resultado antes de retornar
+    print(f"\n📊 Resultado da Análise de Correlação, Coluna alvo: {alvo}") 
 
     return dataframe_corr
